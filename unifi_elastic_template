@@ -1,0 +1,21 @@
+PUT /_index_template/unifi
+{
+  "index_templates": [
+    {
+      "name": "unifi",
+      "index_template": {
+        "index_patterns": [
+          "unifi-*"
+        ],
+        "template": {
+          "settings": {
+            "index": {
+              "number_of_replicas": "0" ### be careful, for homelab this is great and keeping the index Healthly, but for production this is not recommanded
+            }
+          }
+        },
+        "composed_of": []
+      }
+    }
+  ]
+}
